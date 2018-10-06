@@ -83,4 +83,25 @@ input:focus {
   padding-left: 10px;
   width: 320px;
   }
+  
+  .empty-station {
+    background-repeat: no-repeat;
+    background-image: 
+      linear-gradient(white 300px, transparent 0),
+      linear-gradient(white 55px, transparent 0),
+      linear-gradient(lightgray 100%, transparent 0);
+    background-position:
+      20px 20px,  /* image */
+      30px 370px, /* player */
+      0 0;        /* station */
+    background-size:
+      280px 280px,  /* image */
+      260px 55px, /* player */
+      320px 450px;  /* station */
+    border-radius: 0;
+    height: 450px;
+    margin: 20px auto;
+    width: 320px;
+  }
+  
 }
