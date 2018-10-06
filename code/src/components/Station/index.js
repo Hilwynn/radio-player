@@ -18,14 +18,16 @@ class Station extends React.Component {
     }
 
     return (
-      <div>
+      <div className="station-wrapper">
         {availableStations > 0 ? (
           <div className="station-container" style={channelColor.backgroundColor}>
             <div className="station-image">
               <img src={image} alt={name} />
             </div>
             <div className="station-body">
-              <div>{name}</div>
+              <div className="station-name">
+                <h2>{name}</h2>
+              </div>
               <div>
                 <audio controls>
                   <source src={url} type="audio/mpeg" />

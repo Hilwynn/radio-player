@@ -2,7 +2,7 @@ body {
   background-color: #0d1b1e;
   margin: 0;
   padding: 0;
-  font-family: Helvetica, sans-serif;
+  font-family: Quicksand, sans-serif;
 }
 
 h1 {
@@ -10,6 +10,12 @@ h1 {
   font-family: Quicksand, sans-serif;
   margin-bottom: 0;
   text-transform: lowercase;
+}
+
+h2 {
+  color: #fff;
+  font-size: 16px;
+  margin: 0;
 }
 
 img {
@@ -21,6 +27,7 @@ input {
   background-color: #0d1b1e;
   border: 1px solid #fff;
   color: #fff;
+  margin-bottom: 40px;
   padding: 7px 10px 5px;
 }
 
@@ -29,14 +36,51 @@ input:focus {
   outline: none;
 }
 
-header img {
+.wrapper {
+  margin: 0 auto;
+  padding: 100px 10px;
+  width: 580px;
+}
+
+.header img {
   display: block;
   padding: 0 0 20px;
   width: 120px;
 }
 
-.wrapper {
-  margin: 0 auto;
-  padding: 100px 10px;
-  width: 580px;
+@media screen and (max-width: 813px) {
+  .wrapper {
+    padding: 50px 0;
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 412px) {
+  .wrapper {
+    padding: 50px 0;
+    width: 320px;
+  }
+  
+  .header {
+    padding-left: 20px;
+  }
+  
+  .station-container {
+    border-radius: 0;
+    flex-wrap: wrap;
+    height: 450px;
+    margin: 20px auto;
+    width: 320px;
+  }
+  
+  .station-image {
+    height: auto;
+    width: 320px;
+  }
+
+  .station-body {
+  justify-content: flex-end;
+  padding-left: 10px;
+  width: 320px;
+  }
 }

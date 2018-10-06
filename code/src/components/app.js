@@ -51,7 +51,7 @@ class App extends React.Component {
 
     return (
       <main className="wrapper">
-        <header>
+        <header className="header">
           <h1>Radiohubben</h1>
           <img src="/sverigesradio.png" alt="Sveriges Radios logotyp" />
           <input
