@@ -5,6 +5,8 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      filteredRadioStations: [],
+      searchInput: "",
       radioStations: []
     }
   }
@@ -19,18 +21,43 @@ class App extends React.Component {
     })
   }
 
+  getValueInput = (e) => {
+    const inputValue = e.target.value.toLowerCase()
+    this.setState({ searchInput: inputValue })
+    this.filterStations(inputValue)
+  }
+
+  filterStations = (inputValue) => {
+    const { radioStations } = this.state
+    if (inputValue === "") {
+      this.setState({
+        filteredRadioStations: []
+      })
+    } else {
+      this.setState({
+        filteredRadioStations: radioStations.filter(station =>
+          station.name.toLowerCase().includes(inputValue))
+      })
+    }
+  }
+
   render() {
     return (
-      <div>
-        {this.state.radioStations.map(channel =>
+      <main>
+          <input
+            type="text"
+            name="search"
+            value={this.state.searchInput}
+            onChange={this.getValueInput} />
+        {this.state.filteredRadioStations.map(channel =>
           <Station
             key={channel.id}
             color={channel.color}
             image={channel.image}
             name={channel.name}
-            stations={this.state.radioStations}
+            stations={this.state.filteredRadioStations}
             url={channel.liveaudio.url} />)}
-      </div>
+      </main>
     )
   }
 }
