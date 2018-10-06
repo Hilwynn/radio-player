@@ -1,5 +1,6 @@
 import React from "react"
 import Station from "./Station"
+import "../index.css"
 
 class App extends React.Component {
   constructor(props) {
@@ -49,12 +50,17 @@ class App extends React.Component {
     } = this.state
 
     return (
-      <main>
-        <input
-          type="text"
-          name="search"
-          value={searchInput}
-          onChange={this.getValueInput} />
+      <main className="wrapper">
+        <header>
+          <h1>Radiohubben</h1>
+          <img src="/sverigesradio.png" alt="Sveriges Radios logotyp" />
+          <input
+            name="search"
+            onChange={this.getValueInput}
+            placeholder="Sök kanal..."
+            value={searchInput}
+            type="text" />
+        </header>
         {filteredRadioStations.map(channel =>
           <Station
             key={channel.id}
