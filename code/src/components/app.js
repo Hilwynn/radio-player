@@ -1,8 +1,5 @@
 import React from "react"
-import TransitionGroup from "react-transition-group/TransitionGroup"
-import Transition from "react-transition-group/Transition"
 import Station from "./Station"
-import StationSkeleton from "./StationSkeleton"
 
 class App extends React.Component {
   constructor(props) {
@@ -24,27 +21,16 @@ class App extends React.Component {
 
   render() {
     return (
-      <TransitionGroup>
-        {!this.state.radioStations.length > 0 ? (
-          <Transition key="loading" timeout={250}>
-            {state => <StationSkeleton data-state={state} />}
-          </Transition>
-        ) : (
-          <Transition key="data" timeout={250}>
-            {state => (
-              <div>
-                {this.state.radioStations.map(channel =>
-                  <Station
-                    key={channel.id}
-                    color={channel.color}
-                    image={channel.image}
-                    name={channel.name}
-                    url={channel.liveaudio.url} />)}
-              </div>
-            )}
-          </Transition>
-        )}
-      </TransitionGroup>
+      <div>
+        {this.state.radioStations.map(channel =>
+          <Station
+            key={channel.id}
+            color={channel.color}
+            image={channel.image}
+            name={channel.name}
+            stations={this.state.radioStations}
+            url={channel.liveaudio.url} />)}
+      </div>
     )
   }
 }

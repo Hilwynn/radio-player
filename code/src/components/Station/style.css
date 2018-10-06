@@ -1,3 +1,46 @@
+.empty-station {
+  background-repeat: no-repeat;
+  background-image: 
+    linear-gradient(white 100px, transparent 0),
+    linear-gradient(white 45px, transparent 0),
+    linear-gradient(lightgray 100%, transparent 0);
+  background-position:
+    10px 10px,  /* image */
+    130px 55px, /* player */
+    0 0;        /* station */
+  background-size:
+    100px 100px,  /* image */
+    280px 45px, /* player */
+    430px 120px;  /* station */
+  border-radius: 0 25px 25px 0;
+  content: "";
+  height: 120px;
+  margin: 20px;
+  overflow: hidden;
+  position: relative;
+  width: 430px;
+}
+
+.empty-station:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, lightgrey, transparent);
+    animation: loading 1.5s infinite;
+  }
+  
+  @keyframes loading {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
 .station-container {
   border-radius: 0 25px 25px 0;
   display: flex;
