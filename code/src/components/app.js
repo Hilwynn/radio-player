@@ -12,7 +12,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://api.sr.se/api/v2/channels?format=json&size=100").then((response) => {
+    const apiUrl = "http://api.sr.se/api/v2/channels?format=json&size=100"
+    fetch(apiUrl).then((response) => {
       return response.json()
     }).then((json) => {
       this.setState({
@@ -42,20 +43,25 @@ class App extends React.Component {
   }
 
   render() {
+    const {
+      searchInput,
+      filteredRadioStations
+    } = this.state
+
     return (
       <main>
-          <input
-            type="text"
-            name="search"
-            value={this.state.searchInput}
-            onChange={this.getValueInput} />
-        {this.state.filteredRadioStations.map(channel =>
+        <input
+          type="text"
+          name="search"
+          value={searchInput}
+          onChange={this.getValueInput} />
+        {filteredRadioStations.map(channel =>
           <Station
             key={channel.id}
             color={channel.color}
             image={channel.image}
             name={channel.name}
-            stations={this.state.filteredRadioStations}
+            stations={filteredRadioStations}
             url={channel.liveaudio.url} />)}
       </main>
     )
