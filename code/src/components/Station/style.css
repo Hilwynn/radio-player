@@ -22,17 +22,17 @@
 }
 
 .empty-station:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, lightgrey, transparent);
-    animation: loading 1.5s infinite;
-  }
+  animation: loading 1.5s infinite;
+  background: linear-gradient(90deg, transparent, lightgrey, transparent);
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
   
-  @keyframes loading {
+@keyframes loading {
   0% {
     transform: translate3d(-100%, 0, 0);
   }
