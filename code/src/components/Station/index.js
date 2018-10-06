@@ -25,6 +25,7 @@ class Station extends React.Component {
               <img src={image} alt={name} />
             </div>
             <div className="station-body">
+              <div>{name}</div>
               <div>
                 <audio controls>
                   <source src={url} type="audio/mpeg" />

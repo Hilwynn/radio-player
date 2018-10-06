@@ -57,7 +57,7 @@
 .station-body {
 display: flex;
 flex-direction: column;
-justify-content: flex-end;
-padding: 0 0 15px 15px;
+justify-content: space-between;
+padding: 15px 0 15px 15px;
 width: 310px;
 }
