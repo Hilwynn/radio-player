@@ -1,5 +1,4 @@
 .station {
-  background-repeat: no-repeat;
   background-image: 
     linear-gradient(white 100px, transparent 0),
     linear-gradient(white 45px, transparent 0),
@@ -8,6 +7,7 @@
     10px 10px,  /* image */
     130px 55px, /* player */
     0 0;        /* station */
+  background-repeat: no-repeat;
   background-size:
     100px 100px,  /* image */
     280px 45px, /* player */

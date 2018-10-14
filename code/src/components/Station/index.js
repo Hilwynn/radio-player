@@ -12,15 +12,13 @@ class Station extends React.Component {
     } = this.props
     const availableStations = stations.length
     const channelColor = {
-      backgroundColor: {
-        backgroundColor: `#${color}`
-      }
+      backgroundColor: `#${color}`
     }
 
     return (
       <div className="station-wrapper">
         {availableStations > 0 ? (
-          <div className="station-container" style={channelColor.backgroundColor}>
+          <div className="station-container" style={channelColor}>
             <div className="station-image">
               <img src={image} alt={name} />
             </div>
