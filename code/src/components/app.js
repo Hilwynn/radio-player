@@ -53,7 +53,7 @@ class App extends React.Component {
       <main className="wrapper">
         <header className="header">
           <h1>Radiohubben</h1>
-          <img src={`${process.env.PUBLIC_URL}/images/sverigesradio.png`} alt="Sveriges Radios logotyp" />
+          <img src={`${process.env.PUBLIC_URL}/code/images/sverigesradio.png`} alt="Sveriges Radios logotyp" />
           <input
             name="search"
             onChange={this.getValueInput}
