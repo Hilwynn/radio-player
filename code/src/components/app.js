@@ -13,7 +13,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const apiUrl = "http://api.sr.se/api/v2/channels?format=json&size=100"
+    const apiUrl = "https://api.sr.se/api/v2/channels?format=json&size=100"
     fetch(apiUrl).then((response) => {
       return response.json()
     }).then((json) => {
@@ -53,7 +53,7 @@ class App extends React.Component {
       <main className="wrapper">
         <header className="header">
           <h1>Radiohubben</h1>
-          <img src="/sverigesradio.png" alt="Sveriges Radios logotyp" />
+          <img src={`${process.env.PUBLIC_URL}/images/sverigesradio.png`} alt="Sveriges Radios logotyp" />
           <input
             name="search"
             onChange={this.getValueInput}
